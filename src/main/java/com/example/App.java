@@ -1,6 +1,7 @@
 package com.example;
 
 import java.util.*;
+import java.awt.Point;
 
 /**
  * Hello world!
@@ -46,6 +47,29 @@ public class App
 
         //{1,2,3,4} − {1,2,5} = {3,4} 
         Set<Integer> s4 = new HashSet<>();
+        s4.add(1);
+        s4.add(2);
+        s4.add(5);
+
+        Set<Integer> dif2 = new HashSet<>(s3);
+        dif2.removeAll(s4);
+        System.out.println(dif2);
+
+        // {1,2} × {3,4} = {(1,3), (1,4), (2,3), (2,4)}
+
+        Set<Integer> s5 = new HashSet<>();
+        s5.add(3);
+        s5.add(4);
+        Set<Point> prod = new HashSet<>();
+
+        for(Integer a : s2){
+            for(Integer b : s5 ){
+                Point p = new Point(a,b);
+                prod.add(p);
+            }
+        }
+        System.out.println(prod);
+
         
 
     }
